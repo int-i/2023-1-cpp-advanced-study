@@ -20,10 +20,5 @@ unsigned long long fibonacci(int n) {
 
 void bench() {
     BenchGuard _;
-    // 측정할 함수 넣기
-}
-
-int main() {
-    bench();
-    return 0;
+    fibonacci(25);
 }
