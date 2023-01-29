@@ -15,7 +15,10 @@ public:
     }
 
     T pop() {
-        // 
+        std::lock_guard<std::mutex> lock(mutex);
+        const T value = queue.front();
+        queue.pop();
+        return value;
     }
 
     void push(T value) {
