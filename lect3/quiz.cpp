@@ -1,7 +1,21 @@
-﻿#include <functional>
-#include <iostream>
+﻿#include <iostream>
 #include <queue>
 #include <vector>
+
+struct OddFirst {
+    bool operator()(int a, int b) const {
+        if (a % 2 == 0) {
+            if (b % 2 == 0) {
+                return a < b; // a짝 b짝
+            }
+            return true; // a짝 b홀
+        }
+        if (b % 2 == 0) {
+            return false; // a홀 b짝
+        }
+        return a > b; // a홀 b홀
+    }
+};
 
 int main() {
     int A[10] = { 3, 6, 5, 8, 2, 1, 0, 7, 9, 4 };
@@ -12,8 +26,7 @@ int main() {
     }
     std::cout << '\n';
 
-    // 오름차순 우선순위 큐
-    std::priority_queue<int, std::vector<int>, std::greater<int>> pq(A, A + 10);
+    std::priority_queue<int, std::vector<int>, OddFirst> pq(A, A + 10);
 
     pq.push(15);
     pq.push(-3);
