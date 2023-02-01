@@ -47,3 +47,18 @@ template<typename T>
 void move_right(Animal<T> &animal) {
     animal.move(animal.get_x() + 1, animal.get_y());
 }
+
+template<typename T>
+void move_left(Animal<T> &animal) {
+    animal.move(animal.get_x() - 1, animal.get_y());
+}
+
+template<typename T>
+void move_up(Animal<T> &animal) {
+    animal.move(animal.get_x(), animal.get_y() + 1);
+}
+
+template<typename T>
+void move_down(Animal<T> &animal) {
+    animal.move(animal.get_x(), animal.get_y() - 1);
+}
