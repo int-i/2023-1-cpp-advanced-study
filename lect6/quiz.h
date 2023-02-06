@@ -86,9 +86,9 @@ private:
 };
 
 template<typename T>
-concept Printable = /* */;
+concept Printable = requires(T obj) { obj.print(); };
 
-template</* */>
-void print_obj(/* */) {
+template<Printable P>
+void print_obj(const P &obj) {
     obj.print();
 }
