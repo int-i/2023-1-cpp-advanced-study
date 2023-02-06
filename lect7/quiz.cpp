@@ -19,7 +19,7 @@ int main() {
     try {
         const char *const host = "weather.com";
         const char *const port = "443";
-        const char *const target = "/ko-KR/weather/today/l/KSXX0037";
+        const char *const target = "/ko-KR/weather/today/l/4e73be5bb1986d9da1aea69b87c0c9992ad65aecd6fa642d1307f8c488fb6803";
         int version = 11;
 
         // The io_context is required for all I/O
